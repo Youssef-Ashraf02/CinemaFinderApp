@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemaapp.SignupForm">
+   <children>
+      <ImageView fitHeight="491.0" fitWidth="718.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/simple-background-black-background-minimalism-theater-photography-hd-wallpaper-preview.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="67.0" layoutY="137.0" prefHeight="17.0" prefWidth="78.0" text="username" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="481.0" layoutY="137.0" prefHeight="17.0" prefWidth="78.0" text="email" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="222.0" prefHeight="17.0" prefWidth="78.0" text="gender" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="481.0" layoutY="222.0" prefHeight="17.0" prefWidth="78.0" text="password" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernametext1" layoutX="67.0" layoutY="166.0" />
+      <TextField fx:id="emailtext" layoutX="481.0" layoutY="166.0" />
+      <TextField fx:id="passwordtext1" layoutX="481.0" layoutY="249.0" />
+      <ComboBox fx:id="combobox" layoutX="67.0" layoutY="249.0" onAction="#initialize" prefWidth="150.0" />
+      <Button fx:id="signupbutton" layoutX="302.0" layoutY="295.0" mnemonicParsing="false" onAction="#Signupbutton" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: gray;" text="Sign up">
+         <font>
+            <Font name="Arial Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="backbuttonUp" layoutX="328.0" layoutY="334.0" mnemonicParsing="false" onAction="#backbutton" prefHeight="15.0" prefWidth="63.0" style="-fx-background-color: gray;" text="back">
+         <font>
+            <Font name="Arial Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="299.0" layoutY="70.0" prefHeight="36.0" prefWidth="123.0" text="Create account" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Separator layoutX="289.0" layoutY="105.0" prefHeight="3.0" prefWidth="139.0" />
+   </children>
+</AnchorPane>

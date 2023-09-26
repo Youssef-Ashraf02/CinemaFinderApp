@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemaapp.ChooseForm">
+   <children>
+      <ImageView fitHeight="456.0" fitWidth="708.0" layoutY="-3.0">
+         <image>
+            <Image url="@../../../images/simple-background-black-background-minimalism-theater-photography-hd-wallpaper-preview.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="475.0" layoutY="115.0" text="Choose by the District" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="115.0" text="Choose by your location" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="pressDistrict" layoutX="528.0" layoutY="167.0" mnemonicParsing="false" onAction="#pressDistrictButton" prefHeight="35.0" prefWidth="65.0" text="Press" />
+      <Button fx:id="pressLocation" layoutX="109.0" layoutY="167.0" mnemonicParsing="false" onAction="#pressLocationButton" prefHeight="35.0" prefWidth="65.0" text="Press" />
+   </children>
+</AnchorPane>

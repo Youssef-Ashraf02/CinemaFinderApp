@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="290.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinemaapp.Viewcinema2Form">
+   <children>
+      <Label fx:id="label" contentDisplay="CENTER" layoutX="46.0" layoutY="30.0" prefHeight="24.0" prefWidth="240.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="image" fitHeight="240.0" fitWidth="315.0" layoutX="48.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

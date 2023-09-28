@@ -219,8 +219,8 @@ public class Database
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT cinemaname, latitude, longitude FROM cinemas");
              ResultSet resultSet = preparedStatement.executeQuery()) {
 
-            while (resultSet.next()) {
-                // Calculate the distance using the Haversine formula
+            while (resultSet.next())
+            {
                 double distance = DistanceCalculate.haversine(userLat, userLon, resultSet.getDouble("latitude"), resultSet.getDouble("longitude"));
                 Cinema cinema = new Cinema(resultSet.getString("cinemaname"), resultSet.getDouble("latitude"), resultSet.getDouble("longitude"), distance);
                 cinemaWithDistance.add(cinema);
@@ -247,4 +247,36 @@ public class Database
         }
         return cinemaWithDistance;
     }
+    public Cinema getNearestCinema(double userLat, double userLon) {
+        Cinema nearestCinema = null;
+        double smallestDistance = Double.MAX_VALUE;
+
+        try (Connection connection = Database.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT cinemaname, latitude, longitude FROM cinemas");
+             ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            while (resultSet.next()) {
+                double distance = DistanceCalculate.haversine(userLat, userLon, resultSet.getDouble("latitude"), resultSet.getDouble("longitude"));
+
+                if (distance < smallestDistance)
+                {
+                    smallestDistance = distance;
+                    nearestCinema = new Cinema(resultSet.getString("cinemaname"), resultSet.getDouble("latitude"), resultSet.getDouble("longitude"), distance);
+                }
+            }
+            if (nearestCinema != null)
+            {
+                System.out.println("Nearest Cinema: " + nearestCinema.getCinemaName() + ", Distance: " + nearestCinema.getDistance() + " km");
+            }
+            else
+            {
+                System.out.println("No cinemas found.");
+            }
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return nearestCinema;
+    }
+
 }

@@ -32,3 +32,4 @@ The Cinema Booking Application is a JavaFX-based program that simplifies the pro
 5. Select a cinema, explore movies, and choose your movie.
 6. Choose seats and specify the number of tickets.
 7. Complete the checkout process to secure your cinema experience.
+"# decentralized-app" 

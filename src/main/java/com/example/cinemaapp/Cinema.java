@@ -89,6 +89,11 @@ public class Cinema
         Database db = Database.getInstance();
         return db.getCinemaWithDistance(userLat,userLon,listview);
     }
+
+    public static Cinema getnearestcinema(double userLat, double userLon) throws SQLException, ClassNotFoundException {
+        Database db = Database.getInstance();
+        return db.getNearestCinema(userLat,userLon);
+    }
     public static Cinema getName2(String name) throws SQLException, ClassNotFoundException
     {
         Database db = Database.getInstance();

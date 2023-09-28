@@ -1,15 +1,12 @@
 package com.example.cinemaapp;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.scene.control.ListView;
@@ -41,6 +38,7 @@ public class Location implements Initializable
 
     ArrayList<Cinema> cinema;
 
+    Cinema cima;
 
     @FXML
     void initialize() {
@@ -49,15 +47,16 @@ public class Location implements Initializable
                 double latitude = Double.parseDouble(latitudeText.getText());
                 double longitude = Double.parseDouble(longitudeText.getText());
 
-                cinema = Cinema.getcinemawithdistance(latitude, longitude, listview);
+                //cinema = Cinema.getcinemawithdistance(latitude, longitude, listview);
 
-
+                cima = Cinema.getnearestcinema(latitude,longitude);
+                System.out.println(cima);
 
                 Stage secondStage = new Stage();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("nearestCinema_form.fxml"));
                 Parent root = loader.load();
                 NearestCinemaForm nearestCinemaForm = loader.getController();
-                nearestCinemaForm.setDataItems(cinema);
+                nearestCinemaForm.setDataItems(cima);
                 Scene secondScene = new Scene(root);
                 secondStage.setScene(secondScene);
                 secondStage.show();
@@ -85,5 +84,6 @@ public class Location implements Initializable
     {
         webEngine.load("https://www.google.com/maps");
     }
+
 
 }

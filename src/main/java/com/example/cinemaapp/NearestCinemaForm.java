@@ -52,8 +52,7 @@ public class NearestCinemaForm {
     }
 
     @FXML
-    void initialize()
-    {
+    void initialize() throws SQLException, ClassNotFoundException, IOException {
         for(int i = 0;i<cinema.size();i++)
         {
             comboBox.getItems().add(cinema.get(i).getCinemaName());
@@ -88,14 +87,11 @@ public class NearestCinemaForm {
 
         });
     }
-    public void setDataItems(ArrayList<Cinema> dataItems) {
-        ObservableList<String> dataList = FXCollections.observableArrayList();
-        for (Cinema cinema1 : dataItems) {
-            dataList.add("Cinema: " + cinema1.getCinemaName() +  " , Distance: " + cinema1.getDistance() + " km");
-        }
-
-        listview.setItems(dataList);
+    public void setDataItems(Cinema cinema) {
+        String cinemaInfo = "Cinema: " + cinema.getCinemaName() + ", Distance: " + cinema.getDistance() + " km";
+        listview.getItems().add(cinemaInfo);
     }
+
 
     @FXML
     public void setViewbutton(ActionEvent actionEvent) throws  IOException, ClassNotFoundException {

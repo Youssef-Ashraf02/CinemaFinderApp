@@ -1,4 +1,4 @@
-# Cinema Booking Application
+# Cinema Finder Application
 
 ## Description
 
